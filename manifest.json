@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Simple Text Editor Overlay",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_title": "Open Text Editor"
+    },
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
+  
