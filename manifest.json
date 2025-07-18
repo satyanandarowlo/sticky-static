@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Simple Text Editor Overlay",
+    "name": "Study Notes",
     "version": "1.0",
     "permissions": ["activeTab", "scripting"],
     "action": {

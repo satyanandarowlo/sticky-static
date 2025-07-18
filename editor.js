@@ -1,5 +1,5 @@
 // Get the unique key for storage based on the URL
-const storageKey = `simpleTextEditorContent_${window.location.href}`;
+const storageKey = `simpleTextEditorContent_${window.location.hostname}`;
 
 // Function to check if a duplicate tab is already open
 function checkDuplicateTab() {
@@ -23,7 +23,7 @@ function checkDuplicateTab() {
 
 // Function to create the editor with a draggable header and load saved text
 function createEditor() {
-  if (checkDuplicateTab()) return; // Exit if duplicate tab detected
+  // if (checkDuplicateTab()) return; // Exit if duplicate tab detected
 
   // Container for editor and draggable header
   const editorContainer = document.createElement("div");
@@ -95,17 +95,17 @@ function toggleEditor() {
   }
 }
 
-// Listen for fullscreen changes to reattach the editor if necessary
-document.addEventListener("fullscreenchange", () => {
-  const editorContainer = document.getElementById("simpleTextEditorContainer");
-  if (document.fullscreenElement) {
-    if (!editorContainer) {
-      createEditor();
-    }
-  } else if (editorContainer) {
-    editorContainer.remove(); // Remove editor when exiting fullscreen
-  }
-});
+// // Listen for fullscreen changes to reattach the editor if necessary
+// document.addEventListener("fullscreenchange", () => {
+//   const editorContainer = document.getElementById("simpleTextEditorContainer");
+//   if (document.fullscreenElement) {
+//     if (!editorContainer) {
+//       createEditor();
+//     }
+//   } else if (editorContainer) {
+//     editorContainer.remove(); // Remove editor when exiting fullscreen
+//   }
+// });
 
 // Initial toggle when the extension icon is clicked
 toggleEditor();
